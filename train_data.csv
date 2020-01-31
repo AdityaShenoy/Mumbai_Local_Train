@@ -1,0 +1,41 @@
+Source ,Destination ,Start Time ,Speed ,Station        ,Time  ,Platform
+CSMT   ,KHOPOLI     ,04:24      ,S     ,CSMT           ,04:24 ,3-4
+CSMT   ,KHOPOLI     ,04:24      ,S     ,MASJID         ,04:27 ,3
+CSMT   ,KHOPOLI     ,04:24      ,S     ,SANDHURST ROAD ,04:29 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,BYCULLA        ,04:32 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,CHINCHPOKLI    ,04:34 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,CURREY ROAD    ,04:36 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,PAREL          ,04:39 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,DADAR          ,04:42 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,MATUNGA        ,04:45 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,SION           ,04:48 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,KURLA          ,04:52 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,VIDYAVIHAR     ,04:55 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,GHATKOPAR      ,04:58 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,VIKHROLI       ,05:02 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,KANJUR MARG    ,05:05 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,BHANDUP        ,05:08 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,NAHUR          ,05:11 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,MULUND         ,05:14 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,THANE          ,05:19 ,2
+CSMT   ,KHOPOLI     ,04:24      ,S     ,KALVA          ,05:23 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,MUMBRA         ,05:29 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,DIVA JN        ,05:33 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,KOPAR          ,05:38 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,DOMBIVLI       ,05:41 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,THAKURLI       ,05:45 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,KALYAN         ,05:52 ,2
+CSMT   ,KHOPOLI     ,04:24      ,S     ,VITHALWADI     ,05:56 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,ULHAS NAGAR    ,05:59 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,AMBERNATH      ,06:03 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,BADLAPUR       ,06:10 ,2
+CSMT   ,KHOPOLI     ,04:24      ,S     ,VANGANI        ,06:19 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,SHELU          ,06:23 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,NERAL          ,06:27 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,BHIVPURI ROAD  ,06:34 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,KARJAT         ,06:43 ,3
+CSMT   ,KHOPOLI     ,04:24      ,S     ,PALASDHARI     ,06:48 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,KELAVLI        ,06:55 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,DOLAVLI        ,06:58 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,LOWJEE         ,07:02 ,1
+CSMT   ,KHOPOLI     ,04:24      ,S     ,KHOPOLI        ,07:08 ,1
