@@ -9,10 +9,10 @@ from os import scandir
 FOLDER_PREFIX = 'F:\\github\\Mumbai_Local_Train'
 
 # Input and template image folders
-SLOW_MORNING_INPUT_FOLDER = f'{FOLDER_PREFIX}\\screenshots\\S\\AM'
-SLOW_EVENING_INPUT_FOLDER = f'{FOLDER_PREFIX}\\screenshots\\S\\PM'
-FAST_MORNING_INPUT_FOLDER = f'{FOLDER_PREFIX}\\screenshots\\F\\AM'
-FAST_EVENING_INPUT_FOLDER = f'{FOLDER_PREFIX}\\screenshots\\F\\PM'
+S_AM_FOLDER = f'{FOLDER_PREFIX}\\screenshots\\S\\AM'
+S_PM_FOLDER = f'{FOLDER_PREFIX}\\screenshots\\S\\PM'
+F_AM_FOLDER = f'{FOLDER_PREFIX}\\screenshots\\F\\AM'
+F_PM_FOLDER = f'{FOLDER_PREFIX}\\screenshots\\F\\PM'
 TEMPLATE_FOLDER = f'{FOLDER_PREFIX}\\templates'
 
 # names of all stations
@@ -70,8 +70,7 @@ with open('output.csv', 'w') as f:
   f.write('source,destination,start_time,speed,station,time,platform\n')
 
   # For all input folders
-  for INPUT_FOLDER in [SLOW_MORNING_INPUT_FOLDER, SLOW_EVENING_INPUT_FOLDER,
-                      FAST_MORNING_INPUT_FOLDER, FAST_EVENING_INPUT_FOLDER]:
+  for INPUT_FOLDER in [S_AM_FOLDER, S_PM_FOLDER, F_AM_FOLDER, F_PM_FOLDER]:
 
     # Scan the input folder
     with scandir(INPUT_FOLDER) as folder:
