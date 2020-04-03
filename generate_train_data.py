@@ -1,5 +1,4 @@
-# These script assumed that the time gap between 2 stations would always remain
-# same but that was not true so we are not using this script anymore
+# This script assumes that time gap between 2 stations would always remain same
 
 # These are the routes from end station to end station
 end_to_end_routes = [
@@ -49,7 +48,7 @@ for a, e2e_route in enumerate(end_to_end_routes):
 with open('output.csv', 'w') as out:
 
   # Write header in output
-  out.write('start,end,start_time,speed\n')
+  out.write('start,end,start_time,speed,station,time\n')
 
   # Open the input file
   with open('input_for_generate_train_data.txt') as inp:
