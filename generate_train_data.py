@@ -1,5 +1,7 @@
 # This script assumes that time gap between 2 stations would always remain same
 
+import pandas as pd
+
 # These are the routes from end station to end station
 end_to_end_routes = [
   ['CSMT', 'MASJID', 'SANDHURST ROAD', 'BYCULLA', 'CHINCHPOKLI', 'CURREY ROAD',
@@ -28,6 +30,9 @@ time_between_stations = [
 # Initialize an empty dictionary of routes from all station to all station
 routes = dict()
 
+# Initialize an empty dictionary of time delays between adjacent stations
+time_delay = dict()
+
 # For all end to end routes
 for a, e2e_route in enumerate(end_to_end_routes):
 
@@ -44,11 +49,15 @@ for a, e2e_route in enumerate(end_to_end_routes):
         routes[start, end] = a, i, j
         routes[end, start] = a, j, i
 
-# Open the output file
-with open('output.csv', 'w') as out:
+        # Store the time delay if the stations are adjacent
+        if abs(i - j) == 1:
+          time_delay[frozenset([start,end])] = time_between_stations[a][min(i,j)]
+
+# Open the train_data file
+with open('train_data.csv', 'w') as out:
 
   # Write header in output
-  out.write('start,end,start_time,speed,station,time\n')
+  out.write('start,end,start_time,speed,station,time,time_of_day\n')
 
   # Open the input file
   with open('input_for_generate_train_data.txt') as inp:
@@ -75,20 +84,30 @@ with open('output.csv', 'w') as out:
       # Format the time
       start_time = f'{time[:2]}:{time[2:]}'
 
+      # Time of day for temporal ordering of stations in journey
+      time_of_day = int(time[:2])*60 + int(time[2:])
+
       # Train identifier
       train_id = f'{start},{end},{start_time},S'
 
       # Write info for first station
-      out.write(f'{train_id},{start},{start_time}\n')
+      out.write(f'{train_id},{start},{start_time},{time_of_day}\n')
 
       # Extract hour and minute from time
       hour, minute = int(time[:2]), int(time[2:])
 
-      # For all stations except for first
-      for t, station in enumerate(route[1:], start=i):
+      # Store the previous station
+      prev_station = start
 
-        # Add minute delay
-        minute += time_between_stations[a][t]
+      # For all stations except for first
+      for station in route[1:]:
+
+        # Add minute delay to minute and time of day
+        minute += time_delay[frozenset([station, prev_station])]
+        time_of_day += time_delay[frozenset([station, prev_station])]
+
+        # Current station becomes previous_station for next station
+        prev_station = station
 
         # If minute is an hour or more
         if minute > 59:
@@ -98,4 +117,4 @@ with open('output.csv', 'w') as out:
           hour = (hour + 1) % 24
         
         # Write output
-        out.write(f'{train_id},{station},{hour:02}:{minute:02}\n')
+        out.write(f'{train_id},{station},{hour:02}:{minute:02},{time_of_day}\n')
