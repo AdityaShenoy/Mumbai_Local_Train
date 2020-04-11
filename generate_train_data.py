@@ -57,7 +57,7 @@ for a, e2e_route in enumerate(end_to_end_routes):
 with open('train_data.csv', 'w') as out:
 
   # Write header in output
-  out.write('start,end,start_time,speed,station,time,time_of_day\n')
+  out.write('train_id,start,end,start_time,speed,station,time,time_of_day\n')
 
   # Open the input file
   with open('input_for_generate_train_data.txt') as inp:
@@ -85,10 +85,10 @@ with open('train_data.csv', 'w') as out:
       start_time = f'{time[:2]}:{time[2:]}'
 
       # Time of day for temporal ordering of stations in journey
-      time_of_day = int(time[:2])*60 + int(time[2:])
+      time_of_day = (int(time[:2])*60 + int(time[2:])) * 60
 
       # Train identifier
-      train_id = f'{start},{end},{start_time},S'
+      train_id = f'{start}:{end}:{start_time}:S,{start},{end},{start_time},S'
 
       # Write info for first station
       out.write(f'{train_id},{start},{start_time},{time_of_day}\n')
@@ -104,7 +104,7 @@ with open('train_data.csv', 'w') as out:
 
         # Add minute delay to minute and time of day
         minute += time_delay[frozenset([station, prev_station])]
-        time_of_day += time_delay[frozenset([station, prev_station])]
+        time_of_day += time_delay[frozenset([station, prev_station])] * 60
 
         # Current station becomes previous_station for next station
         prev_station = station

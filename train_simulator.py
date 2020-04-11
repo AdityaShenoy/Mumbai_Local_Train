@@ -85,8 +85,9 @@ for mo in range(1, 5):
     # Append this date's data to final data
     final_data = final_data.append(df, ignore_index=True)
 
-# Add random crowd data to the final data
-final_data['crowd'] = np.random.randint(10, 100, size=len(final_data))
+# Add random crowd data for all coaches to the final data
+for i in range(1, 13):
+  final_data[f'crowd{i}'] = np.random.randint(10, 100, size=len(final_data))
 
 # Store the final data in the csv
 final_data.to_csv('train_log.csv', index=False)
